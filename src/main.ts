@@ -1,6 +1,7 @@
 import { Domain } from './api/domain';
 import { Client } from './api/client';
 import { Base } from './api/base';
+import { World } from './api/world';
 
 class PhNodeApi {
   private apiKey: string;
@@ -22,11 +23,21 @@ class PhNodeApi {
   /**
    * 
    * @returns Domain object
-   * @docs https://apidoc.planethoster.com/fr/#tag/Reseller-API
+   * @docs https://apidoc.planethoster.com/en/#tag/Reseller-API
    * 
    */
   public domain () {
     return new Domain(this.client);
+  }
+
+  /**
+   * 
+   * @returns World object
+   * @docs https://apidoc.planethoster.com/en/#tag/World-API
+   * 
+   */
+  public world () {
+    return new World(this.client);
   }
 }
 

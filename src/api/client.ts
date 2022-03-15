@@ -46,7 +46,7 @@ export class Client {
       });
 
       if (params.params) {
-        req.write(params.params);
+        req.write(JSON.stringify(params.params));
       }
 
       req.end();
