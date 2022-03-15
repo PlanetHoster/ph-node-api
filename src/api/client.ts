@@ -1,9 +1,5 @@
 import { request } from 'https';
-
-export interface RequestParams {
-  method: 'POST' | 'GET';
-  path: string;
-}
+import { RequestParams } from '../interfaces/client.interface';
 
 const BASE_API_HOST = 'api.planethoster.net';
 
@@ -31,7 +27,6 @@ export class Client {
         }
       }, (res) => {
         const body: any[] = [];
-        res.setEncoding('utf8');
 
         res.on('data', chunk => {
           body.push(chunk);
@@ -39,7 +34,7 @@ export class Client {
 
         res.on('end', () => {
           try {
-            const resp = JSON.parse(body.toString());
+            const resp = JSON.parse(Buffer.concat(body).toString());
             resolve(resp);
           } catch (e) {
             reject(e);
@@ -49,6 +44,10 @@ export class Client {
       req.on('error', e => {
         reject(e);
       });
+
+      if (params.params) {
+        req.write(params.params);
+      }
 
       req.end();
     });

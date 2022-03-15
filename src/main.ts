@@ -1,4 +1,6 @@
+import { Domain } from './api/domain';
 import { Client } from './api/client';
+import { Base } from './api/base';
 
 class PhNodeApi {
   private apiKey: string;
@@ -14,14 +16,17 @@ class PhNodeApi {
   }
 
   public testConnection () {
-    return this.client.sendRequest({
-      method: 'GET',
-      path: '/reseller-api/test-connection'
-    });
+    return new Base(this.client).testConnection();
   }
 
+  /**
+   * 
+   * @returns Domain object
+   * @docs https://apidoc.planethoster.com/fr/#tag/Reseller-API
+   * 
+   */
   public domain () {
-    return null;
+    return new Domain(this.client);
   }
 }
 
