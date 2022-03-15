@@ -1,5 +1,5 @@
 import { Domain } from './api/domain';
-import { Client } from './api/client';
+import { Client } from './http/client';
 import { Base } from './api/base';
 import { World } from './api/world';
 

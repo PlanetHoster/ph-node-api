@@ -1,4 +1,4 @@
-import { Client } from './client';
+import { Client } from '../http/client';
 
 export class Base {
   protected client: Client;
