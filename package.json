@@ -1,13 +1,17 @@
 {
-  "name": "api-node",
+  "name": "ph-node-api",
   "version": "1.0.0",
   "description": "NodeJS PlanetHoster api integration",
   "repository": "git@github.com:PlanetHoster/api-node.git",
   "author": "Marc-Andre G. <magodin.it@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "./build/main.js",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
-    "build": "rm -rf ./.build && tsc"
+    "build": "rm -rf ./build && tsc"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",

@@ -1,11 +1,11 @@
-import { request } from "http";
+import { request } from "https";
 
 export interface RequestParams {
   method: 'POST' | 'GET';
   path: string;
 }
 
-const BASE_API_HOST = 'https://api.planethoster.net'
+const BASE_API_HOST = 'api.planethoster.net'
 
 export class Client {
 
@@ -19,10 +19,11 @@ export class Client {
 
   public sendRequest(params: RequestParams) {
     return new Promise((resolve, reject) => {
-      request({
+      const req = request({
         host: BASE_API_HOST,
         method: params.method,
         path: params.path,
+        timeout: 15000,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -31,6 +32,7 @@ export class Client {
         },
       }, (res) => {
         const body: any[] = [];
+        res.setEncoding('utf8');
 
         res.on('data', chunk => {
           body.push(chunk);
@@ -38,14 +40,18 @@ export class Client {
 
         res.on('end', () => {
           try {
-            const resp = JSON.parse(Buffer.concat(body).toString());
+            const resp = JSON.parse(body.toString());
             resolve(resp);
           } catch (e) {
             reject(e);
-            return;
           }
         });
       });
+      req.on('error', e => {
+        reject(e);
+      });
+
+      req.end();
     });
   }
   

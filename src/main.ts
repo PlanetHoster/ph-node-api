@@ -1,6 +1,6 @@
 import { Client } from "./api/client";
 
-export default class PhApi {
+class PhNodeApi {
 
   private apiKey: string;
   private apiUser: string;
@@ -21,3 +21,5 @@ export default class PhApi {
     });
   }
 }
+
+export = PhNodeApi;
