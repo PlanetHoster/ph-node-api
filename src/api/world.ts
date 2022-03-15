@@ -1,6 +1,11 @@
 import { RequestParams } from '../interfaces/client.interface';
-import { CreateAccount, Resources, SuspendAccount, WorldId } from '../interfaces/world.interface';
 import { Base } from './base';
+import { 
+  CreateAccount,
+  Resources,
+  SuspendAccount,
+  WorldId 
+} from '../interfaces/world.interface';
 
 export class World extends Base {
   getAccounts () {

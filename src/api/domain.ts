@@ -1,6 +1,15 @@
 import { RequestParams } from '../interfaces/client.interface';
-import { ContactDetails, RegisterDomain, RegistrarLock, RenewDomain, SaveDnsRecords, SaveNameservers, SldTld, TransferDomain } from '../interfaces/domain.interface';
 import { Base } from './base';
+import { 
+  ContactDetails,
+  RegisterDomain,
+  RegistrarLock,
+  RenewDomain,
+  SaveDnsRecords,
+  SaveNameservers,
+  SldTld,
+  TransferDomain 
+} from '../interfaces/domain.interface';
 
 export class Domain extends Base {
   accountInfo () {
