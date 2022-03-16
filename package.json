@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "lint": "npx eslint src/*/**"
+    "lint": "npx eslint src/**/**/*"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",

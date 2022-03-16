@@ -1,7 +1,10 @@
-import { Domain } from './api/domain';
+import { 
+  Base,
+  Domain,
+  World,
+  N0c 
+} from './api';
 import { Client } from './http/client';
-import { Base } from './api/base';
-import { World } from './api/world';
 
 class PhNodeApi {
   private apiKey: string;
@@ -38,6 +41,15 @@ class PhNodeApi {
    */
   public world () {
     return new World(this.client);
+  }
+
+  /**
+   * 
+   * @returns N0c Object
+   * 
+   */
+  public n0c () {
+    return new N0c(this.client);
   }
 }
 
