@@ -1,4 +1,5 @@
 import { Client } from '../http/client';
+import { RequestParams } from '../interfaces/client.interface';
 
 export class Base {
   protected client: Client;

@@ -1,4 +1,3 @@
-import { RequestParams } from '../interfaces/client.interface';
 import { Base } from './base';
 import { 
   CreateAccount,
@@ -7,51 +6,45 @@ import {
   WorldId 
 } from '../interfaces/world.interface';
 
+const BASE_PATH = '/world-api';
+
 export class World extends Base {
   getAccounts () {
-    return this.sendWorldRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: '/get-accounts'
+      path: `${BASE_PATH}/get-accounts`
     });
   }
 
   createAccount (params: CreateAccount) {
-    return this.sendWorldRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/create-account',
+      path: `${BASE_PATH}/create-account`,
       params
     });
   }
 
   suspendAccount (params: SuspendAccount) {
-    return this.sendWorldRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/suspend-account',
+      path: `${BASE_PATH}/suspend-account`,
       params
     });
   }
 
   unsuspendAccount (params: WorldId) {
-    return this.sendWorldRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/unsuspend-account',
+      path: `${BASE_PATH}/unsuspend-account`,
       params
     });
   }
 
   modifyResources (params: Resources) {
-    return this.sendWorldRequest({
-      method: 'POST',
-      path: '/modify-resources',
-      params
-    });
-  }
-
-  private sendWorldRequest (params: RequestParams) {
     return this.client.sendRequest({
-      method: params.method,
-      path: `/world-api${params.path}`,
-      params: params.params
+      method: 'POST',
+      path: `${BASE_PATH}/modify-resources`,
+      params
     });
   }
 }

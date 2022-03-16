@@ -1,3 +1,4 @@
+import { RequestParams } from "../interfaces/client.interface";
 import { Base } from "./base";
 import { 
   N0cUser,

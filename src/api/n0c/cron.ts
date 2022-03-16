@@ -1,5 +1,5 @@
-import { N0c } from "../n0c";
+import { Base } from '../base';
 
-export class N0cCron extends N0c {
+export class N0cCron extends Base {
 
 }

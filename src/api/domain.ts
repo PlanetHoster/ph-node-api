@@ -1,4 +1,3 @@
-import { RequestParams } from '../interfaces/client.interface';
 import { Base } from './base';
 import { 
   ContactDetails,
@@ -11,140 +10,134 @@ import {
   TransferDomain 
 } from '../interfaces/domain.interface';
 
+const BASE_PATH = '/reseller-api';
+
 export class Domain extends Base {
   accountInfo () {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
       path: '/account-info'
     });
   }
 
   tldPrices () {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: '/tld-prices'
+      path: `${BASE_PATH}/tld-prices`
     });
   }
 
   checkDomainAvailability (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/check-availability?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/check-availability?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   domainInformation (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/domain-info?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/domain-info?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   contactDetails (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/get-contact-details?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/get-contact-details?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   saveContactDetails (params: ContactDetails) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/save-contact-details',
+      path: `${BASE_PATH}/save-contact-details`,
       params
     });
   }
 
   getRegistrarLock (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/get-registrar-lock?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/get-registrar-lock?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   saveRegistrarLock (params: RegistrarLock) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: '/save-registrar-lock',
+      path: `${BASE_PATH}/save-registrar-lock`,
       params
     });
   }
 
   getNameservers (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/get-nameservers?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/get-nameservers?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   saveNameservers (params: SaveNameservers) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/save-nameservers',
+      path: `${BASE_PATH}/save-nameservers`,
       params
     });
   }
 
   getDnsRecords (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'GET',
-      path: `/get-ph-dns-records?sld=${params.sld}&tld=${params.tld}`
+      path: `${BASE_PATH}/get-ph-dns-records?sld=${params.sld}&tld=${params.tld}`
     });
   }
 
   saveDnsRecords (params: SaveDnsRecords) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/save-ph-dns-records',
+      path: `${BASE_PATH}/save-ph-dns-records`,
       params
     });
   }
 
   deleteZone (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/delete-ph-dns-zone',
+      path: `${BASE_PATH}/delete-ph-dns-zone`,
       params
     });
   }
 
   emailEppCode (params: SldTld) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/email-epp-code',
+      path: `${BASE_PATH}/email-epp-code`,
       params
     });
   }
 
   registerDomain (params: RegisterDomain) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/register-domain',
+      path: `${BASE_PATH}/register-domain`,
       params
     });
   }
 
   renewDomain (params: RenewDomain) {
-    return this.sendResellerRequest({
+    return this.client.sendRequest({
       method: 'POST',
-      path: '/renew-domain',
+      path: `${BASE_PATH}/renew-domain`,
       params
     });
   }
 
   transferDomain (params: TransferDomain) {
-    return this.sendResellerRequest({
-      method: 'POST',
-      path: '/transfert-domain',
-      params
-    });
-  }
-
-  private sendResellerRequest (params: RequestParams) {
     return this.client.sendRequest({
-      method: params.method,
-      path: `/reseller-api${params.path}`,
-      params: params.params
+      method: 'POST',
+      path: `${BASE_PATH}/transfert-domain`,
+      params
     });
   }
 }
