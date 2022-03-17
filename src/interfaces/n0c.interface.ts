@@ -1,5 +1,25 @@
 type RedirectionType = 301 | 302;
+
 type EmailAuthType = 'dkim' | 'spf' | 'dMarc';
+
+type DatabasePrivilegesType = 
+'ALTER' |
+'ALTER ROUTINE' |
+'CREATE' |
+'CREATE ROUTINE' |
+'CREATE TEMPORARY TABLES' |
+'CREATE VIEW' |
+'DELETE' |
+'DROP' |
+'EVENT' |
+'EXECUTE' |
+'INDEX' |
+'INSERT' |
+'LOCK TABLES' |
+'REFERENCES' |
+'SELECT-SHOW VIEW' |
+'TRIGGER' |
+'UPDATE';
 export interface N0cId {
   id: number;
 }
@@ -82,4 +102,22 @@ export interface EmailSuspension extends N0cId {
 
 export interface EmailAuth extends EmailDomainId {
   auth: EmailAuthType;
+}
+
+export interface DatabaseName extends N0cId {
+  name: string;
+}
+
+export interface DatabaseUser extends N0cId {
+  dbUser: string;
+}
+
+export interface AddDatabaseUser extends DatabaseUser {
+  password: string;
+}
+
+export interface DatabasePermission extends N0cId {
+  databaseName: string;
+  databaseUsername: string;
+  privileges: DatabasePrivilegesType;
 }
