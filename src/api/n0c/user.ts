@@ -4,7 +4,6 @@ import { Base } from '../base';
 const BASE_PATH = '/n0c-api/user';
 
 export class N0cUser extends Base {
-
   temporaryDomain (params: N0cId) {
     return this.client.sendRequest({
       method: 'POST',
@@ -44,5 +43,4 @@ export class N0cUser extends Base {
       params
     });
   }
-
 }
