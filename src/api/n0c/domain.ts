@@ -44,7 +44,7 @@ export class N0cDomain extends Base {
     });
   }
 
-  suspendDomains (params: DomainSuspension) {
+  suspend (params: DomainSuspension) {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/suspend`,
@@ -52,7 +52,7 @@ export class N0cDomain extends Base {
     });
   }
 
-  unsuspendDomains (params: DomainSuspension) {
+  unsuspend (params: DomainSuspension) {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/unsuspend`,
