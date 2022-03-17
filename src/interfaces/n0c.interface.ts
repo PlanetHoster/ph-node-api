@@ -20,6 +20,7 @@ type DatabasePrivilegesType =
 'SELECT-SHOW VIEW' |
 'TRIGGER' |
 'UPDATE';
+
 export interface N0cId {
   id: number;
 }
@@ -133,4 +134,20 @@ export interface CronId extends N0cId {
 
 export interface CronEmail extends N0cId {
   email: string
+}
+
+export interface Ftp extends Domain {
+  ftpUser: string;
+}
+
+export interface FtpPassword extends Ftp {
+  password: string;
+}
+
+export interface AddFtp extends FtpPassword {
+  path: string;
+}
+
+export interface UpdateFtpPath extends Ftp {
+  path: string
 }
