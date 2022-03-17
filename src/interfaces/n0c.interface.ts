@@ -121,3 +121,16 @@ export interface DatabasePermission extends N0cId {
   databaseUsername: string;
   privileges: DatabasePrivilegesType;
 }
+
+export interface Cron extends N0cId {
+  schedule: string;
+  command: string;
+}
+
+export interface CronId extends N0cId {
+  cronId: number;
+}
+
+export interface CronEmail extends N0cId {
+  email: string
+}
