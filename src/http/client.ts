@@ -7,9 +7,12 @@ export class Client {
   private apiKey: string;
   private apiUser: string;
 
-  constructor (apiKey: string, apiUser: string) {
+  private n0cUserId: number | undefined;
+
+  constructor (apiKey: string, apiUser: string, n0cUserId?: number) {
     this.apiKey = apiKey;
     this.apiUser = apiUser;
+    this.n0cUserId = n0cUserId;
   }
 
   public sendRequest<T> (params: RequestParams): Promise<T> {
@@ -46,6 +49,13 @@ export class Client {
       });
 
       if (params.params) {
+        if (this.n0cUserId) {
+          params.params = {
+            ...params.params,
+            id: this.n0cUserId,
+          };
+        }
+        console.log(params.params);
         req.write(JSON.stringify(params.params));
       }
 

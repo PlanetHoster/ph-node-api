@@ -10,17 +10,13 @@ class PhNodeApi {
   private apiKey: string;
   private apiUser: string;
 
-  private client: Client;
-
   constructor (apiKey: string, apiUser: string) {
     this.apiKey = apiKey;
     this.apiUser = apiUser;
-
-    this.client = new Client(this.apiKey, this.apiUser);
   }
 
   public testConnection () {
-    return new Base(this.client).testConnection();
+    return new Base(new Client(this.apiKey, this.apiUser)).testConnection();
   }
 
   /**
@@ -30,7 +26,7 @@ class PhNodeApi {
    * 
    */
   public domain () {
-    return new Domain(this.client);
+    return new Domain(new Client(this.apiKey, this.apiUser));
   }
 
   /**
@@ -40,7 +36,7 @@ class PhNodeApi {
    * 
    */
   public world () {
-    return new World(this.client);
+    return new World(new Client(this.apiKey, this.apiUser));
   }
 
   /**
@@ -48,8 +44,8 @@ class PhNodeApi {
    * @returns N0c Object
    * 
    */
-  public n0c () {
-    return new N0c(this.client);
+  public n0c (userId: number) {
+    return new N0c(new Client(this.apiKey, this.apiUser, userId));
   }
 }
 
