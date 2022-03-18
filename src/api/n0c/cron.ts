@@ -1,5 +1,4 @@
 import {
-  N0cId,
   Cron,
   CronId,
   CronEmail
@@ -9,11 +8,10 @@ import { Base } from '../base';
 const BASE_PATH = 'n0c-api/cron';
 
 export class N0cCron extends Base {
-  getAll (params: N0cId) {
+  getAll () {
     return this.client.sendRequest({
       method: 'GET',
       path: '/n0c-api/crons',
-      params
     });
   }
 
@@ -41,11 +39,10 @@ export class N0cCron extends Base {
     });
   }
 
-  removeCronEmail (params: N0cId) {
+  removeCronEmail () {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/email/remove`,
-      params
     });
   }
 }

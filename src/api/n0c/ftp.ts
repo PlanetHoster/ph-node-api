@@ -2,7 +2,6 @@ import {
   AddFtp,
   Ftp,
   FtpPassword,
-  N0cId,
   UpdateFtpPath
 } from '../../interfaces/n0c.interface';
 import { Base } from '../base';
@@ -10,11 +9,10 @@ import { Base } from '../base';
 const BASE_PATH = '/n0c-api/ftp-account';
 
 export class N0cFtp extends Base {
-  getAll (params: N0cId) {
+  getAll () {
     return this.client.sendRequest({
       method: 'GET',
       path: '/n0c-api/ftp-accounts',
-      params
     });
   }
 
@@ -50,11 +48,10 @@ export class N0cFtp extends Base {
     });
   }
 
-  listConnections (params: N0cId) {
+  listConnections () {
     return this.client.sendRequest({
       method: 'GET',
       path: `${BASE_PATH}/active-connection`,
-      params
     });
   }
 }

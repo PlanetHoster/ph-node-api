@@ -5,18 +5,16 @@ import {
   DomainSuspension,
   ExternalRedirection,
   InternalRedirection,
-  N0cId
 } from '../../interfaces/n0c.interface';
 import { Base } from '../base';
 
 const BASE_PATH = '/n0c-api/domain';
 
 export class N0cDomain extends Base {
-  getAll (params: N0cId) {
+  getAll () {
     return this.client.sendRequest({
       method: 'GET',
       path: '/n0c-api/domains',
-      params
     });
   }
 
@@ -68,11 +66,10 @@ export class N0cDomain extends Base {
     });
   }
 
-  getRedirections (params: N0cId) {
+  getRedirections () {
     return this.client.sendRequest({
       method: 'GET',
       path: `${BASE_PATH}/redirections`,
-      params
     });
   }
 

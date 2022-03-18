@@ -45,6 +45,9 @@ class PhNodeApi {
    * 
    */
   public n0c (userId: number) {
+    if (!userId) {
+      throw new Error('No user specified for the n0c object')
+    }
     return new N0c(new Client(this.apiKey, this.apiUser, userId));
   }
 }

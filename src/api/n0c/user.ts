@@ -1,30 +1,27 @@
-import { AddSshKey, N0cId, RemoveSshKey } from '../../interfaces/n0c.interface';
+import { AddSshKey, RemoveSshKey } from '../../interfaces/n0c.interface';
 import { Base } from '../base';
 
 const BASE_PATH = '/n0c-api/user';
 
 export class N0cUser extends Base {
-  temporaryDomain (params: N0cId) {
+  temporaryDomain () {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/temp-domain`,
-      params
     });
   }
 
-  disableTempDomain (params: N0cId) {
+  disableTempDomain () {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/disable-temp-domain`,
-      params
     });
   }
 
-  sshKeys (params: N0cId) {
+  sshKeys () {
     return this.client.sendRequest({
       method: 'GET',
       path: `${BASE_PATH}/ssh-keys`,
-      params
     });
   }
 

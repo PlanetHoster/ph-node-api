@@ -21,26 +21,22 @@ type DatabasePrivilegesType =
 'TRIGGER' |
 'UPDATE';
 
-export interface N0cId {
-  id: number;
-}
-
-export interface AddSshKey extends N0cId {
+export interface AddSshKey {
   pKey: string;
   comment: string;
   fromIps: string[];
 }
 
-export interface EditSshKey extends N0cId {
+export interface EditSshKey {
   key: string;
   comment: string;
   fromIps: string[];
 }
 
-export interface RemoveSshKey extends N0cId {
+export interface RemoveSshKey {
   key: string;
 }
-export interface Domain extends N0cId {
+export interface Domain {
   domain: string;
 }
 
@@ -52,7 +48,7 @@ export interface AddSubDomain extends AddDomain {
   subDomain: string;
 }
 
-export interface DomainSuspension extends N0cId {
+export interface DomainSuspension {
   domains: string[];
 }
 
@@ -97,7 +93,7 @@ export interface EmailQuota extends Domain {
   mailUser: string;
 }
 
-export interface EmailSuspension extends N0cId {
+export interface EmailSuspension {
   emails: EmailDomain[];
 }
 
@@ -105,11 +101,11 @@ export interface EmailAuth extends EmailDomainId {
   auth: EmailAuthType;
 }
 
-export interface DatabaseName extends N0cId {
+export interface DatabaseName {
   name: string;
 }
 
-export interface DatabaseUser extends N0cId {
+export interface DatabaseUser {
   dbUser: string;
 }
 
@@ -117,22 +113,22 @@ export interface AddDatabaseUser extends DatabaseUser {
   password: string;
 }
 
-export interface DatabasePermission extends N0cId {
+export interface DatabasePermission {
   databaseName: string;
   databaseUsername: string;
   privileges: DatabasePrivilegesType;
 }
 
-export interface Cron extends N0cId {
+export interface Cron {
   schedule: string;
   command: string;
 }
 
-export interface CronId extends N0cId {
+export interface CronId {
   cronId: number;
 }
 
-export interface CronEmail extends N0cId {
+export interface CronEmail {
   email: string
 }
 
