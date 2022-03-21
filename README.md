@@ -28,5 +28,5 @@ const api = new PhNodeApi({
   api_user: 'API_USER'
 });
 
-runTestConnection(api);
+testConnection(api);
 ```
