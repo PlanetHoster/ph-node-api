@@ -15,7 +15,7 @@
     "build": "rm -rf ./build && tsc",
     "lint": "npx eslint src/**/**/*",
     "prebuild-package": "yarn build",
-    "build-package": "npm version patch && cp ./build-files/package.json ./build && cp ./README.md ./build/README.md"
+    "build-package": "cp ./package.json ./build && cp ./README.md ./build/README.md"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
