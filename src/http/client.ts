@@ -55,7 +55,6 @@ export class Client {
             id: this.n0cUserId,
           };
         }
-        console.log(params.params);
         req.write(JSON.stringify(params.params));
       }
 
