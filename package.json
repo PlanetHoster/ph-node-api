@@ -1,6 +1,6 @@
 {
   "name": "ph-node-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NodeJS PlanetHoster api integration",
   "repository": "git@github.com:PlanetHoster/api-node.git",
   "author": "Marc-Andre G. <marc-andre.godin@planethoster.info>",
