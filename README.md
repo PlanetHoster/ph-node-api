@@ -13,5 +13,18 @@ npm install ph-node-api
 
 ## Usage
 ```javascript
+const PhNodeApi = require('ph-node-api');
 
+async function ClientUsage() {
+  const api = new PhNodeApi({
+    api_key: 'API_KEY',
+    api_user: 'API_USER'
+  });
+
+  try {
+    console.log(await api.testConnection());
+  } catch (e) {
+    console.log(e);
+  }
+}
 ```
