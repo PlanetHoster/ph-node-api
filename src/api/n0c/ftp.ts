@@ -12,7 +12,7 @@ export class N0cFtp extends Base {
   getAll () {
     return this.client.sendRequest({
       method: 'GET',
-      path: '/n0c-api/ftp-accounts',
+      path: '/n0c-api/ftp-accounts'
     });
   }
 
@@ -51,7 +51,7 @@ export class N0cFtp extends Base {
   listConnections () {
     return this.client.sendRequest({
       method: 'GET',
-      path: `${BASE_PATH}/active-connection`,
+      path: `${BASE_PATH}/active-connection`
     });
   }
 }

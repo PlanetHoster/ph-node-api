@@ -4,7 +4,7 @@ import {
   EmailAuth,
   EmailDomainId,
   EmailQuota,
-  EmailSuspension,
+  EmailSuspension
 } from '../../interfaces/n0c.interface';
 import { Base } from '../base';
 
@@ -14,7 +14,7 @@ export class N0cEmail extends Base {
   getAll () {
     return this.client.sendRequest({
       method: 'GET',
-      path: '/n0c-api/emails',
+      path: '/n0c-api/emails'
     });
   }
 

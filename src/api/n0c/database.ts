@@ -2,7 +2,7 @@ import {
   AddDatabaseUser,
   DatabaseName,
   DatabasePermission,
-  DatabaseUser,
+  DatabaseUser
 } from '../../interfaces/n0c.interface';
 import { Base } from '../base';
 
@@ -12,7 +12,7 @@ export class N0cDatabase extends Base {
   getAll () {
     return this.client.sendRequest({
       method: 'GET',
-      path: '/n0c-api/databases',
+      path: '/n0c-api/databases'
     });
   }
 
@@ -35,7 +35,7 @@ export class N0cDatabase extends Base {
   getUsers () {
     return this.client.sendRequest({
       method: 'GET',
-      path: `${BASE_PATH}/users`,
+      path: `${BASE_PATH}/users`
     });
   }
 

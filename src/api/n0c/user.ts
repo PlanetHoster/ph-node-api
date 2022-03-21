@@ -7,21 +7,21 @@ export class N0cUser extends Base {
   temporaryDomain () {
     return this.client.sendRequest({
       method: 'POST',
-      path: `${BASE_PATH}/temp-domain`,
+      path: `${BASE_PATH}/temp-domain`
     });
   }
 
   disableTempDomain () {
     return this.client.sendRequest({
       method: 'POST',
-      path: `${BASE_PATH}/disable-temp-domain`,
+      path: `${BASE_PATH}/disable-temp-domain`
     });
   }
 
   sshKeys () {
     return this.client.sendRequest({
       method: 'GET',
-      path: `${BASE_PATH}/ssh-keys`,
+      path: `${BASE_PATH}/ssh-keys`
     });
   }
 

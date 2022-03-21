@@ -11,7 +11,7 @@ export class N0cCron extends Base {
   getAll () {
     return this.client.sendRequest({
       method: 'GET',
-      path: '/n0c-api/crons',
+      path: '/n0c-api/crons'
     });
   }
 
@@ -42,7 +42,7 @@ export class N0cCron extends Base {
   removeCronEmail () {
     return this.client.sendRequest({
       method: 'POST',
-      path: `${BASE_PATH}/email/remove`,
+      path: `${BASE_PATH}/email/remove`
     });
   }
 }
