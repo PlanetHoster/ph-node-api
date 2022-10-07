@@ -70,7 +70,7 @@ export class N0cEmail extends Base {
     return this.client.sendRequest({
       method: 'GET',
       path: `${BASE_PATH}/auths`,
-      params: params
+      params
     });
   }
 
@@ -78,7 +78,7 @@ export class N0cEmail extends Base {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/auth/enable`,
-      params: params
+      params
     });
   }
 
@@ -86,7 +86,7 @@ export class N0cEmail extends Base {
     return this.client.sendRequest({
       method: 'POST',
       path: `${BASE_PATH}/auth/disable`,
-      params: params
+      params
     });
   }
 }
