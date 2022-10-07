@@ -1,5 +1,7 @@
 # ph-node-api
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/PlanetHoster/ph-node-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/PlanetHoster/ph-node-api/tree/main)
+
 [![NPM](https://nodei.co/npm/ph-node-api.png)](https://nodei.co/npm/ph-node-api/)
 
 NodeJS PlanetHoster API integration.
