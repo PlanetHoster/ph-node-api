@@ -4,9 +4,11 @@
     "config:base",
     "schedule:daily",
     ":disableRateLimiting",
-    ":skipStatusChecks",
     "group:linters",
-    "group:testNonMajor"
+    "group:testNonMajor",
+    ":automergeLinters",
+    ":automergeTesters",
+    ":automergeTypes"
   ],
   "timezone": "America/Montreal",
   "labels": [
