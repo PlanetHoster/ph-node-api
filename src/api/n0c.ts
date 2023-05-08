@@ -3,6 +3,7 @@ import { Base } from "./base";
 import { 
   N0cUser,
   N0cDomain,
+  N0cDns,
   N0cEmail,
   N0cDatabase,
   N0cCron,
@@ -31,6 +32,16 @@ export class N0c extends Base {
     domain () {
       return new N0cDomain(this.client);
     }
+
+  /**
+   *
+   * @returns N0C Dns object
+   * @docs https://apidoc.planethoster.com/en/#tag/DNS
+   *
+   */
+  dns () {
+    return new N0cDns(this.client);
+  }
 
   /**
    * 
