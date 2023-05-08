@@ -71,12 +71,10 @@ export interface WafRules extends Domain {
 }
 export interface DnsDomain {
   domain: string;
-  id?: number;
 }
 
 export interface DnsSet {
   domain: string;
-  id?: number;
   rrsets: string;
 }
 
