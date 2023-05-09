@@ -69,6 +69,14 @@ export interface WafRules extends Domain {
   wafDisabledRules: number[];
   append?: boolean;
 }
+export interface DnsDomain {
+  domain: string;
+}
+
+export interface DnsSet {
+  domain: string;
+  rrsets: string;
+}
 
 export interface Email extends Domain {
   password: string;
