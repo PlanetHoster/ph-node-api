@@ -20,14 +20,14 @@
   "devDependencies": {
     "@tsconfig/node16": "1.0.4",
     "@types/node": "20.12.12",
-    "@typescript-eslint/eslint-plugin": "7.10.0",
-    "@typescript-eslint/parser": "7.10.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
     "eslint": "8.57.0",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-n": "16.6.2",
     "eslint-plugin-n": "14.0.0",
-    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-promise": "6.2.0",
     "typescript": "5.0.4"
   }
 }
