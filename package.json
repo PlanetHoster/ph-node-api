@@ -28,6 +28,6 @@
     "eslint-plugin-n": "16.6.2",
     "eslint-plugin-n": "14.0.0",
     "eslint-plugin-promise": "6.6.0",
-    "typescript": "5.0.4"
+    "typescript": "5.9.3"
   }
 }
