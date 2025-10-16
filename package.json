@@ -1,12 +1,14 @@
 {
-  "name": "ph-node-api",
-  "version": "1.0.6",
+  "name": "@planethoster-oss/api",
+  "version": "1.1.0",
   "description": "NodeJS PlanetHoster api integration",
-  "repository": "git@github.com:PlanetHoster/api-node.git",
-  "author": "Marc-Andre G. <marc-andre.godin@planethoster.info>",
+  "repository": "https://github.com/PlanetHoster/ph-node-api.git",
   "license": "MIT",
   "private": false,
   "main": "./build/main.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "typings": "./build/main.d.ts",
   "files": [
     "build/**/**/*"
