@@ -1,6 +1,6 @@
 # ph-node-api
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/PlanetHoster/ph-node-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/PlanetHoster/ph-node-api/tree/main)
+[![CI](https://github.com/PlanetHoster/ph-node-api/actions/workflows/ci.yml/badge.svg)](https://github.com/PlanetHoster/ph-node-api/actions/workflows/ci.yml)
 
 [![NPM](https://nodei.co/npm/ph-node-api.png)](https://nodei.co/npm/ph-node-api/)
 
