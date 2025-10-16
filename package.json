@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "lint": "npx eslint src/**/**/*",
-    "prebuild-package": "yarn build",
+    "lint": "eslint src/**/**/*",
+    "prebuild-package": "pnpm build",
     "build-package": "cp ./package.json ./build && cp ./README.md ./build/README.md"
   },
   "devDependencies": {
@@ -26,7 +26,6 @@
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "16.6.2",
-    "eslint-plugin-n": "14.0.0",
     "eslint-plugin-promise": "6.6.0",
     "typescript": "5.0.4"
   }
