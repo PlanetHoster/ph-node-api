@@ -20,7 +20,7 @@
     "build-package": "cp ./package.json ./build && cp ./README.md ./build/README.md"
   },
   "devDependencies": {
-    "@tsconfig/node16": "1.0.4",
+    "@tsconfig/node18": "18.2.0",
     "@types/node": "22.18.10",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
