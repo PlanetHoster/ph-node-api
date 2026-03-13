@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@tsconfig/node16':
-        specifier: 1.0.4
-        version: 1.0.4
+        specifier: 16.1.8
+        version: 16.1.8
       '@types/node':
         specifier: 22.18.10
         version: 22.18.10
@@ -87,8 +87,8 @@ packages:
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
-  '@tsconfig/node16@1.0.4':
-    resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+  '@tsconfig/node16@16.1.8':
+    resolution: {integrity: sha512-T/CfdwFry660WjZor56z0F3pxeCllt8KOxWcHFW6ZEuULKUObTDEMdgtctyuJPxwqyWDsvHRfxHaJ4FIICyoqQ==}
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -1137,7 +1137,7 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
-  '@tsconfig/node16@1.0.4': {}
+  '@tsconfig/node16@16.1.8': {}
 
   '@types/json5@0.0.29': {}
 
